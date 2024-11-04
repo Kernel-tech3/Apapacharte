@@ -8,16 +8,20 @@
     <style>
         * {
             margin: 0px;
-            padding: 0;
+            padding: 0px;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
+            
+        }
+        body{
+            background-color: antiquewhite;
         }
 
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #fff;
+            background-color: antiquewhite;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
         }
@@ -26,6 +30,7 @@
             display: flex;
             justify-content: center;
             padding: 1rem;
+            
         }
 
         nav a {
@@ -37,21 +42,23 @@
 
         .hero {
             height: 50vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://github.com/Kernel-tech3/Img-Kernel/blob/main/public/img/logo-RESTAURADO.jpg?raw=true');
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://github.com/Kernel-tech3/Img-Kernel/blob/main/public/img/logo-RESTAURADO.jpg?raw=true');
             background-size: cover;
             background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 3.5rem;
+            margin-top: 1rem;
         }
 
-        .hero h1 {
-            color: white;
-            font-size: 2rem;
+        h1 {
+            color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
-            background-color: transparent;
-            padding: 1rem;
+            border-bottom: 2px solid black;
+            
+            
+
             
         }
 
@@ -80,8 +87,9 @@
 
         .card {
             min-width: calc(100% - 2rem);
-            background: white;
+            background:rgb(190, 216, 190);
             border-radius: 10px;
+           
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             overflow: hidden;
         }
@@ -94,6 +102,7 @@
 
         .card-content {
             padding: 1rem;
+            
         }
 
         .card-title {
@@ -185,6 +194,7 @@
 
     .footer-section {
         padding: 1rem;
+        text-align: justify;
     }
 
     .footer-section h3 {
@@ -251,6 +261,12 @@
         margin-bottom: 0.5rem;
         font-size: 0.9rem;
     }
+    .separar{
+        color: black;
+        font:400;
+        text-align: center;
+    }
+  
     </style>
 </head>
 <body>
@@ -258,14 +274,23 @@
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="https://www.instagram.com/apapacharte1/"  target="_blank">Instagram</a>
-            <a href="https://wa.link/ccg6am">Contacto de whatsapp</a>
+            <a href="https://wa.link/ccg6am" target="_blank">Contacto de whatsapp</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Bienvenido a Apapacharte</h1>
+        
         
     </section>
+    <h1 id="inicio">Bienvenidos a Apapacharte</h1>
+    <br>
+    <div class="separar">
+        <h2>Artículos</h2>
+
+    </div>
+
+
+    
 
     <main>
         <section id="mates">
@@ -282,7 +307,7 @@
         </section>
 
         <section id="termos">
-            <h2 class="section-title">Decoracion</h2>
+            <h2 class="section-title">Decoración</h2>
             <div class="carousel-container">
                 <div class="carousel" id="termos-carousel"></div>
                 <button class="carousel-control carousel-prev">
@@ -308,7 +333,7 @@
         </section>
 
         <section id="yerbas">
-            <h2 class="section-title">Conjuntos y articulos para la cocina</h2>
+            <h2 class="section-title">Set de mates y artículos de cocina</h2>
             <div class="carousel-container">
                 <div class="carousel" id="yerbas-carousel"></div>
                 <button class="carousel-control carousel-prev">
@@ -334,31 +359,27 @@
                 </ul>
                 
                 
-                <div class="social-links">
-                    
-                    <a href="https://www.instagram.com/apapacharte1/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.link/ccg6am"><i class="fab fa-whatsapp"></i></a>
-                  
-                </div>
+               
             </div>
 
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <ul class="contact-info">
                     <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Av. Siempreviva 123, Springfield</span>
-                    </li>
-                    
-                    <li>
                         <i class="fas fa-envelope"></i>
-                        <span>Vale3110@gmail.com</span>
+                        <span>3110valeg@gmail.com</span>
                     </li>
                     <li>
                         <i class="fab fa-whatsapp"></i>
                         <span>+54 9 3515 47-4199</span>
                     </li>
                 </ul>
+                <div class="social-links">
+                    
+                    <a href="https://www.instagram.com/apapacharte1/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.link/ccg6am" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  
+                </div>
             </div>
 
             <div class="footer-section">
@@ -378,7 +399,7 @@
                     </li>
                 </ul>
                 <p style="margin-top: 1rem;">
-                    <i class="fas fa-info-circle"></i> Envíos a todo el Carlos Paz
+                    <i class="fas fa-info-circle"></i> Envíos a todo el país
                 </p>
             </div>
         </div>
@@ -392,33 +413,34 @@
         // Datos de ejemplo para los productos
         const productos = {
             mates: [
-                { nombre: "Mate con diseño de ojos", precio: 5000, descripcion: "", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate1.jfif" },
-                { nombre: "Mate blanco con negro", precio: 3500, descripcion: "Mate resistente y duradero", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate2.jfif" },
-                { nombre: "Mate personalizado con un tejido", precio: 4200, descripcion: "Diseño creativo", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate3.jfif" },
-                { nombre: "Mate dalmata", precio: 3800, descripcion: "El mate mas llamativo", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate4.jfif" },
-                { nombre: "Mate con flores", precio: 6000, descripcion: "Mate de primavera", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate5.jfif" }
+                { nombre: "Artículo 1", precio: 8500, imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate1.jfif" },
+                { nombre: "Artículo 2", precio: 8500, imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate2.jfif" },
+                { nombre: "Artículo 3", precio: 8000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate3.jfif" },
+                { nombre: "Artículo 4", precio: 12000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate4.jfif" },
+                { nombre: "Artículo 5", precio: 10000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate5.jfif" }
             ],
             termos: [
-                { nombre: "Cuadros de repisa", precio: 15000, descripcion: "Los cuadros mas resistentes", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion1.jfif" },
-                { nombre: "Casita decoracion", precio: 8000, descripcion: "Clásico argentino", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion2.jfif" },
-                { nombre: "Cuadro", precio: 12000, descripcion: "Ideal para camping", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion3.jfif" },
-                { nombre: "Llavero de cactus", precio: 13500, descripcion: "Diseño moderno", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion4.jfif" },
-                { nombre: "Cuadro con un cactus", precio: 9000, descripcion: "Excelente relación precio-calidad", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion%205.jfif" },
-                { nombre: "Cuadro Family", precio: 9000, descripcion: "Excelente relación precio-calidad", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion%206.jfif" }
+                { nombre: "Artículo 1", precio: 8000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion1.jfif" },
+                { nombre: "Artículo 2", precio: 7000, imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion2.jfif" },
+                { nombre: "Artículo 3", precio: 8000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion3.jfif" },
+                { nombre: "Artículo 4", precio: 13000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion4.jfif" },
+                { nombre: "Artículo 5", precio: 14000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion%205.jfif" },
+                { nombre: "Artículo 6", precio: 9000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/decoracion%206.jfif" }
             ],
             bombillas: [
-                { nombre: "pecebre", precio: 2500, descripcion: "Calidad premium", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/navidad1.jfif" },
-                { nombre: "pino de navidad", precio: 1800, descripcion: "Resistente y duradera", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/navidad%202.jfif" },
-                { nombre: "Pinos con distinto modelo", precio: 3500, descripcion: "Elegante y sofisticada", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/navidad3.jfif" },
-                { nombre: "Vela de flores", precio: 2800, descripcion: "Hecha a mano", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/vela1.jfif" },
-                { nombre: "Vela personalizada", precio: 2000, descripcion: "Diseño contemporáneo", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/vela2.jfif" }
+                { nombre: "Artículo 1", precio: 12000, imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/navidad1.jfif" },
+                { nombre: "Artículo 2", precio: 9000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/navidad%202.jfif" },
+                { nombre: "Artículo 3", precio: 9000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/navidad3.jfif" },
+                { nombre: "Artículo 4", precio: 9000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/vela1.jfif" },
+                { nombre: "Artículo 5", precio: 6000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/vela2.jfif" }
             ],
             yerbas: [
-                { nombre: "Palo de amazar", precio: 1200, descripcion: "Sabor tradicional", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/articulos.jfif" },
-                { nombre: "Conjunto de tabla", precio: 1100, descripcion: "Yerba clásica", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/conjunto%203.jfif" },
-                { nombre: "Conjunto con bolso", precio: 1300, descripcion: "La más vendida", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/conjunto-bolso-mate.jfif" },
-                { nombre: "Conjunto de mate flores", precio: 1250, descripcion: "Suave y aromática", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate-conjunto.jfif" },
-                { nombre: "Apolla saumerio", precio: 1600, descripcion: "100% natural", imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/saumerio1.jfif" }
+                { nombre: "Artículo 1", precio: 10000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/articulos.jfif" },
+                { nombre: "Artículo 2", precio: 22000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/conjunto%203.jfif" },
+                { nombre: "Artículo 3", precio: 29900,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/conjunto-bolso-mate.jfif" },
+                { nombre: "Artículo 4", precio: 12000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/mate-conjunto.jfif" },
+                { nombre: "Artículo 5", precio: 6000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/porta-saumerio.jfif" },
+                { nombre: "Artículo 6", precio: 9000,  imagen: "https://raw.githubusercontent.com/Kernel-tech3/Img-Kernel/refs/heads/main/public/img/espiral.jfif" }
             ]
         };
 
